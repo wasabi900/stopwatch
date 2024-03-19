@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, interval, map } from 'rxjs';
+import { BehaviorSubject, interval, map, takeUntil } from 'rxjs';
+
+export interface DisplayTime {
+  minutes: number,
+  seconds: number,
+  miliseconds: number
+}
 
 @Injectable()
 export class TimerService {
@@ -45,6 +51,15 @@ export class TimerService {
     }
 
     this.laps.next([...this.laps.value, lap]);
+    this.scrollToTop('laps');
+  }
+
+  scrollToTop(idOfElement: string) {
+    const containerElement = document.getElementById(idOfElement);
+
+    if (containerElement) {
+      containerElement.scrollTo({top: 0, behavior: 'instant'})
+    }
   }
 
   getLaps() {

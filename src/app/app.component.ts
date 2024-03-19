@@ -1,9 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlay, faStop, faPause, faFlag } from '@fortawesome/free-solid-svg-icons';
-import { interval, map, tap } from 'rxjs';
 import { TimerService } from './core/timer.service';
 
 @Component({

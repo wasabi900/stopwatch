@@ -5,6 +5,7 @@
 
       <h1 class="time">{{ timer | date: 'mm:ss.SS' }}</h1>
 
+
     } @else {
 
       <h1 class="time">{{ time | date: 'mm:ss.SS' }}</h1>
@@ -37,14 +38,16 @@
 
   }
 
-  <div class="laps">
-    @for (lap of laps$ | async; track $index;) {
-      <div class="lap">
-        <span class="index">{{$index + 1}}</span>
-        <span class="lap-time">+ {{lap.diff | date: 'mm:ss.SS'}}</span>
-        <span class="lap-time">{{lap.time | date: 'mm:ss.SS' }}</span>
-      </div>
-    }
+  <div class="scrollContainer">
+  <div id="laps" class="laps">
+      @for (lap of laps$ | async; track $index;) {
+        <div class="lap">
+          <span class="index">{{$index + 1}}</span>
+          <span class="lap-time">+ {{lap.diff | date: 'mm:ss.SS'}}</span>
+          <span class="lap-time">{{lap.time | date: 'mm:ss.SS' }}</span>
+        </div>
+      }
+    </div>
   </div>
 </div>
 
