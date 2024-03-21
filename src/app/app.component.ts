@@ -18,8 +18,6 @@ export class AppComponent {
 
   timerService = inject(TimerService);
 
-  title = 'stopwatch';
-
   faPlay = faPlay;
   faStop = faStop;
   faPause = faPause;

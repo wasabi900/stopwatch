@@ -3,7 +3,7 @@ import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { TimerService } from './timer.service';
 import { Observable, take } from 'rxjs';
 
-fdescribe('TimerService', () => {
+describe('TimerService', () => {
   let service: TimerService;
 
   beforeEach(() => {
